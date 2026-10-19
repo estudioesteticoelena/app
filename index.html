@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FB188D">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/8kMhqX93/logotipo-estudio-estetico-elena.jpg">
     <title>Tarjeta de Presentación Digital - Estética </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -433,6 +436,15 @@ END:VCARD`;
             servicesModal.style.display = "none";
         }
     }
+</script>
+<script>
+  // Habilita el funcionamiento como aplicación instalada (PWA).
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+        .catch(error => console.error('No se pudo registrar el service worker:', error));
+    });
+  }
 </script>
 </body>
 </html>
